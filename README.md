@@ -2,6 +2,10 @@
 
 Substitute string with one shortcut.
 
+In my daily coding, I repeatedly replace ' with ". For that, I used :s/'/"/g or r". However, that's annoying to type them again and again.
+
+So, I made this plugin. This make it possible to configure substitute shortcuts easily. For example, focusing on the line you want to execute substitution then pressing gz replaces ' with " whole of focused line.
+
 # Advantages
 
 - **Dot-repeat is supported**
@@ -11,7 +15,6 @@ Substitute string with one shortcut.
 # Demo
 
 https://github.com/kjuq/instant-substituter.nvim/assets/44694396/ec8810b9-aede-4ce5-b7ed-d0abbbe606fd
-
 
 # Installation
 
