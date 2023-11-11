@@ -1,4 +1,4 @@
-# Instant-Substituter.nvim
+# Instant-substituter.nvim
 
 Substitute string with one shortcut.
 
