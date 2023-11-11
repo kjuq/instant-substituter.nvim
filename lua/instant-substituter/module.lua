@@ -6,6 +6,7 @@ _G._instant_substituter_callbacks = {}
 ---@param key string Key to execute replacement.
 ---@param lhs string Left-hand side of the string for replacement.
 ---@param rhs string Right-hand side of the string for replacement.
+---@param debug boolean Whether to print debug messages.
 M.bind = function(key, lhs, rhs, debug)
 	-- must remove "<", ">", and "-" to use a callback function as rhs of vim.go.operatorfunc
 	local normalized_key = string.gsub(string.gsub(string.gsub(key, "%<", "_LEFTABRC_"), "%>", "_RIGHTABRC_"), "%-", "_")
@@ -30,7 +31,15 @@ M.bind = function(key, lhs, rhs, debug)
 		return "g@l"
 	end
 
-	vim.keymap.set("n", key, main_func, { expr = true })
+	local desc = "Instant-substituter: Substitute " .. lhs .. " with " .. rhs
+	vim.keymap.set("n", key, main_func, { expr = true, desc = desc })
+	vim.keymap.set("v", key, function()
+		local esc = vim.api.nvim_replace_termcodes("<esc>", true, false, true)
+		vim.api.nvim_feedkeys(esc, "x", false)
+		local cmd = "'<,'>s/" .. lhs .. "/" .. rhs .. "/ge"
+		vim.cmd(cmd)
+		vim.cmd.nohlsearch()
+	end, { desc = desc })
 end
 
 return M
