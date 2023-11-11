@@ -10,12 +10,14 @@ Substitute string with one shortcut.
 
 # Demo
 
+https://github.com/kjuq/instant-substituter.nvim/assets/44694396/ec8810b9-aede-4ce5-b7ed-d0abbbe606fd
+
+
 # Installation
 
 Using [Lazy.nvim](https://github.com/folke/lazy.nvim)
 ```
 { "kjuq/instant-substituter.nvim" }
-
 ```
 
 # Configuration
@@ -37,7 +39,7 @@ Example
 
 `[<A>] = { "<B>", "<C>"}`
 
-Put the key to activate a substitution in <A>. It replace a string <B> with <C>.
+Put the key to activate a substitution in `<A>`. It replaces a string `<B>` with `<C>`.
 
 # Usage
 
