@@ -4,7 +4,7 @@ Substitute string with one shortcut.
 
 # Advantages
 
-- **Dot repeat is supported**
+- **Dot-repeat is supported**
 - Replace multiple lines simultaneously in VISUAL mode
 - Easy configuration
 
