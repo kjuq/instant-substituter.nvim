@@ -1,6 +1,6 @@
 # Instant-substituter.nvim
 
-Substitute string with one shortcut.
+**Substitute string with one shortcut.**
 
 In my daily coding, I repeatedly replace ' with ". For that, I used :s/'/"/g or r". However, that's annoying to type them again and again.
 
