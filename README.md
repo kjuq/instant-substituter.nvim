@@ -11,6 +11,7 @@ So, I made this plugin. This makes it possible to configure substitute shortcuts
 - **Dot-repeat is supported**
 - Replace multiple lines simultaneously in VISUAL mode
 - Easy configuration
+- Not only replacing but also swapping two strings
 
 # Demo
 
@@ -29,19 +30,19 @@ Example
 
 ```lua
 {
-    "kjuq/instant-substituter.nvim",
-    opts = {
-        keys = {
-            ["gz"] = { [[']], [["]] },
-            ["<C-l>"] = { [[-]], [[+]] },
-            ["<leader>o"] = { "var", "let" },
-        },
+  "kjuq/instant-substituter.nvim",
+  opts = {
+    keys = {
+      ["gz"] = { "'", '"', { swap = true } }, -- swap ' for "
+      ["<C-l>"] = { "-", "+" }, -- just replace - with +
+      ["<leader>o"] = { "var", "let" }, -- not only a symbol, a word is also supported
     },
+  },
 }
 ```
 
 ```lua
-[<A>] = { "<B>", "<C>"}
+["<A>"] = { "<B>", "<C>" }
 ```
 
 Put the key to activate a substitution in `<A>`. It replaces a string `<B>` with `<C>`.
