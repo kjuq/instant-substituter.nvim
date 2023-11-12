@@ -1,7 +1,7 @@
 local module = require("instant-substituter.module")
 
 ---@class Config
----@field keys table
+---@field keys table<string, table<string, string, table<string, boolean>?>>
 ---@field debug boolean
 local config = {
 	keys = {},
@@ -19,11 +19,12 @@ M.bind = function()
 	for key, v in pairs(keys) do
 		local lhs = v[1]
 		local rhs = v[2]
-		module.bind(key, lhs, rhs, debug)
+		local opts = v[3]
+		module.bind(key, lhs, rhs, opts, debug)
 	end
 end
 
----@param args Config?
+---@param args Config
 M.setup = function(args)
 	M.config = vim.tbl_deep_extend("force", M.config, args or {})
 	M.bind()
