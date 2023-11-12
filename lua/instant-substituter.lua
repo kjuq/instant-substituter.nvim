@@ -1,4 +1,3 @@
--- main module file
 local module = require("instant-substituter.module")
 
 ---@class Config

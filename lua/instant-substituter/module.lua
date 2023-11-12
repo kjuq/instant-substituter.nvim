@@ -1,4 +1,3 @@
----@class CustomModule
 local M = {}
 
 _G._instant_substituter_callbacks = {}
@@ -21,7 +20,7 @@ M.bind = function(key, lhs, rhs, debug)
 		vim.cmd.nohlsearch()
 	end
 
-	_G.main_func = function()
+	_G._instant_substituter_main = function()
 		vim.go.operatorfunc = "v:lua._instant_substituter_callbacks." .. normalized_key
 
 		if debug then
@@ -32,7 +31,7 @@ M.bind = function(key, lhs, rhs, debug)
 	end
 
 	local desc = "Instant-substituter: Substitute " .. lhs .. " with " .. rhs
-	vim.keymap.set("n", key, main_func, { expr = true, desc = desc })
+	vim.keymap.set("n", key, _instant_substituter_main, { expr = true, desc = desc })
 	vim.keymap.set("v", key, function()
 		local esc = vim.api.nvim_replace_termcodes("<esc>", true, false, true)
 		vim.api.nvim_feedkeys(esc, "x", false)
