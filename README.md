@@ -2,9 +2,9 @@
 
 **Substitute string with one shortcut.**
 
-In my daily coding, I repeatedly replace ' with ". For that, I used :s/'/"/g or r". However, that's annoying to type them again and again.
+In my daily coding, I repeatedly replace ' with ". For that, I used `:s/'/"/g` or `r"`. However, that's annoying to type them again and again.
 
-So, I made this plugin. This make it possible to configure substitute shortcuts easily. For example, focusing on the line you want to execute substitution then pressing gz replaces ' with " whole of focused line.
+So, I made this plugin. This makes it possible to configure substitute shortcuts easily. For example, focusing on the line you want to execute substitution then pressing `gz` replaces ' with " whole of the focused line.
 
 # Advantages
 
