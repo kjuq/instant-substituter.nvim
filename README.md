@@ -35,7 +35,7 @@ Example
     keys = {
       ["gz"] = { "'", '"', { swap = true } }, -- swap ' for "
       ["<C-l>"] = { "-", "+" }, -- just replace - with +
-      ["<leader>o"] = { "var", "let" }, -- not only a symbol, a word is also supported
+      ["<leader>o"] = { "var", "let" }, -- not only symbols, words are also supported
     },
   },
 }
